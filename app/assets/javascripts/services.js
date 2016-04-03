@@ -84,7 +84,6 @@ services.factory('Map', [
         labelAnchor: "50 0",
         visible: false,
         options: {
-          icon: "assets/icon.png",
           draggable: false,
           clickable: true,
           animation: google.maps.Animation.BOUNCE
