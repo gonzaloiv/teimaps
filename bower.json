@@ -1,0 +1,27 @@
+{
+  "name": "teimaps2",
+  "homepage": "n",
+  "authors": [
+    "gonzaloiv <aelthalion@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor/assets/components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "*",
+    "angular-google-maps": "^2.3.2",
+    "angular-route": "^1.5.2",
+    "bootstrap": "^3.3.6",
+    "angular-resource": "^1.5.2",
+    "seiyria-bootstrap-slider": "^6.1.6"
+  }
+}

@@ -1,0 +1,11 @@
+/*
+*= require bootstrap/dist/css/bootstrap
+
+*= require seiyria-bootstrap-slider/dist/css/bootstrap-slider
+
+*= require styles
+*= require simple-sidebar
+
+*= require_self
+*= require_tree .
+*/
