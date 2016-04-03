@@ -78,8 +78,8 @@ services.factory('Map', [
 	  map.pushMarker = function(marker){
 	  	map.markers.push({
 	  		id: map.markers.length,
-	  		latitude: marker.lat,
-	  		longitude: marker.lng,
+	  		latitude: marker.latitude,
+	  		longitude: marker.longitude,
 	  		title: marker.date,
         labelAnchor: "50 0",
         visible: false,
@@ -92,9 +92,10 @@ services.factory('Map', [
 	  };
 	  map.pushPath = function(path){
 	  	// Se añaden los markers dandoles el formato para el map
-			path.forEach(function(marker, index) {
-          map.pushMarker(marker);
-      });
+	  	var len = path.length;
+	  	for(var i = 0; i < len; i++){
+        map.pushMarker(path[i]);
+      }
 	  }
 		return map;
 }]);
@@ -102,7 +103,7 @@ services.factory('Map', [
 // JSON de lugares
 services.factory('Path', ['$resource',
 	function($resource){
-		return $resource('path.json', {},{
+		return $resource('/paths/:path_id/marks.json', {pathId: '@path_id'},{
 			query : {
 				isArray: true,
 				method: 'GET'

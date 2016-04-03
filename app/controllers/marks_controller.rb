@@ -1,8 +1,9 @@
 class MarksController < ApplicationController
-	respond_to :json
 	# Sólo tiene un index para los de determinado 
 	def index
-		respond_with Mark.all
+		path = Path.find(params[:path_id])
+		marks = path.marks.all
+		respond_with marks
 	end
 	def create
 		path = Path.find(params[:path_id])
