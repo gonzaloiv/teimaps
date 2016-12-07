@@ -5,7 +5,7 @@ body{
 .navbar {
 	margin-bottom: 0;
 	border-radius: 0;
-	height: 7vh;
+	height: 20px;
 	background-color: #F8F8F8;
   border-color: #F8F8F8;
 }
@@ -45,8 +45,8 @@ body{
 
 /* Menú de marcadores */
 .marker-menu {
-	position:absolute; 
-	top:85vh; 
+	position:absolute;
+	top:85vh;
 	right:15vw;
 	z-index:10;
 	background: #F8F8F8;
@@ -63,14 +63,14 @@ body{
 /* Slider */
 .slider{
 	margin:20px;
-	width: 400px;
+	width: 600px;
 }
 .slider-selection{
 	opacity: .6;
 }
 
 .slider-handle{
-	opacity: .6;	
+	opacity: .6;
 }
 .slider.slider-horizontal {
 	width:400px;

@@ -3,8 +3,8 @@
 /* Controllers */
 var controllers = angular.module('controllers', ['uiGmapgoogle-maps']);
 
-controllers.controller('MapCtrl', ['$scope', 'Path', 'uiGmapGoogleMapApi', 'Map', 'Slider',
-	function ($scope, Path, uiGmapGoogleMapApi, Map, Slider) {    
+controllers.controller('MapCtrl', ['$scope', 'PathsService', 'uiGmapGoogleMapApi', 'Map', 'Slider',
+	function ($scope, PathsService, uiGmapGoogleMapApi, Map, Slider) {
 
       // Eventos para los botones
       $scope.prevMarker = function(){
@@ -21,14 +21,14 @@ controllers.controller('MapCtrl', ['$scope', 'Path', 'uiGmapGoogleMapApi', 'Map'
       };
 
     // Llamada para recibir los datos de localizaciones
-    Path.query({path_id:1}).$promise.then(function(path){
+    PathsService.query({path_id:3}).$promise.then(function(path){
 
       // Una vez el mapa se ha cargado...
       uiGmapGoogleMapApi.then(function(maps) {
-          
+
         // Instancia del mapa con opciones iniciales
         $scope.map = Map;
-        
+
         // Inserción de los markers del archivo
         $scope.map.pushPath(path);
 
@@ -50,5 +50,13 @@ controllers.controller('MapCtrl', ['$scope', 'Path', 'uiGmapGoogleMapApi', 'Map'
 
       });
     });
+  }
+]);
+
+controllers.controller('LoginCtrl', ['$scope', '$state',
+  function ($scope, $state) {
+    $scope.signIn = function(user){
+      $state.go('paths', {userId: $scope.password})
+    };
   }
 ]);

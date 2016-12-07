@@ -1,36 +1,36 @@
 
 <!-- MENÚ -->
 <div class="marker-menu">
-		<button 
+		<button
 			id="btn-markers"
 			class="btn btn-default"
 			ng-click="prevMarker()"><b><</b></button>
 		<!-- SLIDER -->
 		<span><input class="slider"></span>
-		<button 
+		<button
 			id="btn-markers"
-			ng-click="nextMarker()" 
+			ng-click="nextMarker()"
 			class="btn btn-default"><b>></b></button>
 </div>
 
 <!-- MAP -->
-<ui-gmap-google-map 
-	center='map.center' 
+<ui-gmap-google-map
+	center='map.center'
 	zoom='map.zoom'
 	options='map.options'
 	>
-	
+
 	<!-- Grupo de markers -->
 	<ui-gmap-markers models="map.markers" coords="'self'" options="'self'" fit="map.fit" >
-		<ui-gmap-polyline path="map.markers" stroke="{color: EEE, weight: 10, opacity: 0.2}"></ui-gmap-polyline>
+		<ui-gmap-polyline path="map.markers" stroke="{color: EEE, weight: 2, opacity: 0.1}"></ui-gmap-polyline>
 	</ui-gmap-markers>
 
 	<!-- ng-repeat para solucionar options.visible -->
 	<ui-gmap-marker idKey="selectedMarker.id" coords="{latitude: selectedMarker.latitude, longitude: selectedMarker.longitude}" options="selectedMarker.options">
- 
+
 	 	<ui-gmap-window show="true">
 	 		{{selectedMarker.title | date: 'hh:mma dd/MMM/yyyy'}}
 		</ui-gmap-window>
-	</ui-gmap-marker>	
+	</ui-gmap-marker>
 
 </ui-gmap-google-map>

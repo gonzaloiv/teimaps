@@ -5,6 +5,7 @@
 
 *= require styles
 *= require simple-sidebar
+*= require login-form
 
 *= require_self
 *= require_tree .

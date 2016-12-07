@@ -4,7 +4,7 @@ class CreateMarks < ActiveRecord::Migration
       t.string :date
       t.float :latitude
       t.float :longitude
-      t.references :path, index: true, foreign_key: true
+      t.references :path, index: true
 
       t.timestamps null: false
     end

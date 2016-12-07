@@ -14,19 +14,20 @@
 ActiveRecord::Schema.define(version: 20160403104934) do
 
   create_table "marks", force: :cascade do |t|
-    t.string   "date"
-    t.float    "latitude"
-    t.float    "longitude"
-    t.integer  "path_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "date",       limit: 255
+    t.float    "latitude",   limit: 24
+    t.float    "longitude",  limit: 24
+    t.integer  "path_id",    limit: 4
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
-  add_index "marks", ["path_id"], name: "index_marks_on_path_id"
+  add_index "marks", ["path_id"], name: "index_marks_on_path_id", using: :btree
 
   create_table "paths", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "name",       limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
 end

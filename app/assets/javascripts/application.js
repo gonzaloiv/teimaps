@@ -4,7 +4,7 @@
 //= require seiyria-bootstrap-slider/dist/bootstrap-slider
 
 //= require angular/angular
-//= require angular-route/angular-route
+//= require angular-ui-router/release/angular-ui-router
 //= require angular-resource/angular-resource
 
 //= require angular-rails-templates
